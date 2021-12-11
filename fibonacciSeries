@@ -1,0 +1,12 @@
+
+a=0
+b=1
+
+res=1
+for i in range(50):
+    if(res>= 50):
+        break
+    print(res)
+    res=b+a
+    b=res
+    a=b
