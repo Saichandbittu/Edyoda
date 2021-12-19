@@ -1,0 +1,7 @@
+n = ord('a')
+dic = dict()
+
+for i in range(26):
+    dic[chr(n)]=n
+    n+=1
+print(d)
