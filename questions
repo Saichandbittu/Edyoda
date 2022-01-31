@@ -1,0 +1,31 @@
+1. What are the methods available for the conversion of numbers from one type to another?
+2. What are Data Types?
+3. Name four of the main data types in Python
+4. What are the data types in Python?
+5. What is the output of the following code : print 9//2?
+6. what is an identity operator?
+7. what are the types of operators in python?
+8. what is bitwise operator?
+9. What are the 4 conditional statements?
+10. How do you write a conditional statement in Python?
+11. Write a program to check whether a person is eligible for voting or not?
+12. Write a program to display "Hello" if a number entered by user is a multiple of five , otherwise print "Bye".
+13. Write a program to print first 10 natural number.
+14. for i in "python":
+       print(i, end=' ')
+       
+15. b=5
+while(b<9):
+  print("H")
+  b+=1
+  
+16.  i=9
+while True:
+  if i%3==0:
+    break
+  print("A")
+  
+17. difference between pass by reference and pass by value
+18. lambda function syntax
+19. scope of variables
+20. what is function arguments
