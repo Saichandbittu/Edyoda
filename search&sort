@@ -1,0 +1,103 @@
+# 1. Binary Search
+l_data = [5,7,9,10,15,19,20,25,26,29,35,36,38]
+element = 26
+start = 0
+end = len(l_data) - 1
+while True:
+    m = (start + end) // 2
+    if element == l_data[m]:
+        print('element found at position', m)
+        break
+    elif element < l_data[m]:
+        end = m
+    else:
+        start = m
+    if end - start == 1:
+        print('element not found')
+        break
+
+# 2. Merge sort
+l_data = [11,28,6,1,2,9,75,12,46,20,15,13,17,6,5,3]
+
+
+def mergesort(l_data):
+    if len(l_data) > 1:
+        m = len(l_data) // 2
+        start = l_data[:m]
+        R = l_data[m:]
+        mergesort(start)
+        mergesort(R)
+        i = j = k = 0
+        while i < len(start) and j < len(R):
+            if start[i] < R[j]:
+                l_data[k] = start[i]
+                i += 1
+            else:
+                l_data[k] = R[j]
+                j += 1
+            k += 1
+
+        while i < len(start):
+            l_data[k] = start[i]
+            i += 1
+            k += 1
+
+        while j < len(R):
+            l_data[k] = R[j]
+            j += 1
+            k += 1
+
+
+mergesort(l_data)
+print(l_data)
+
+
+# 3. quick sort
+
+def partition(start, end, l_data):
+    pi = start
+    pv = l_data[pi]
+    while start < end:
+        while start < len(l_data) and l_data[start] <= pv:
+            start += 1
+        while l_data[end] > pv:
+            end -= 1
+        if start < end:
+            l_data[start], l_data[end] = l_data[end], l_data[start]
+    l_data[end], l_data[pi] = l_data[pi], l_data[end]
+    return end
+
+
+def quicksort(start, end, l_data):
+    if start < end:
+        p = partition(start, end, l_data)
+        quicksort(0, p - 1, l_data)
+        quicksort(p + 1, end, l_data)
+
+
+l_data = [11,28,6,1,2,9,75,12,46,20,15,13,17,6,5,3]
+quicksort(0, len(l_data) - 1, l_data)
+print(l_data)
+
+
+# 4. Isertion sort
+
+def insertionsort(l_data):
+    for i in range(1, len(l_data)):
+        if l_data[i - 1] > l_data[i]:
+            val = l_data[i]
+            j = i - 1
+            while j >= 0 and val < l_data[j]:
+                l_data[j + 1] = l_data[j]
+                j -= 1
+            l_data[j + 1] = val
+
+
+l_data = [11,28,6,1,2,9,75,12,46,20,15,13,17,6,5,3]
+insertionsort(l_data)
+print(l_data)
+
+# 5. Sort strings
+l_data = ['bittu', 'saichand', 'ajay', 'nani', 'samrat', 'kiwi']
+mergesort(l_data)
+print(l_data)
